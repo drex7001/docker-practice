@@ -1,0 +1,27 @@
+# Use Node.js as the base image
+FROM node:18
+
+# Set working directory
+WORKDIR /app
+
+# Copy project files
+COPY package.json package-lock.json ./
+
+# Install dependencies
+RUN npm install
+
+# Copy rest of the files
+COPY . .
+
+# Move to the public directory
+WORKDIR /var/www/html/public
+
+# Build the React app
+RUN npm run build
+
+# Serve the app with a lightweight server
+RUN npm install -g serve
+CMD ["serve", "-s", "build"]
+
+# Expose React's default port
+EXPOSE 3000
