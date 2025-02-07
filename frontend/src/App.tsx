@@ -69,9 +69,9 @@ export default function App() {
 
   return (
     <>
-      <div className="flex flex-col md:flex-row w-full lg:w-1/2 mx-auto">
-        <div className="w-full md:w-1/3 p-4">
-          <h2 className="text-xl font-bold mb-4">Add Task</h2>
+      <div className="flex flex-col w-full mx-auto md:flex-row lg:w-1/2">
+        <div className="w-full p-4 md:w-1/3">
+          <h2 className="mb-4 text-xl font-bold">Add Task</h2>
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div>
               <label className="block text-sm font-medium text-gray-700" htmlFor="title">
@@ -83,7 +83,7 @@ export default function App() {
                 onChange={(e) => setTitle(e.target.value)}
                 value={title}
                 type="text"
-                className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                className="block w-full p-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
               />
             </div>
             <div>
@@ -95,19 +95,19 @@ export default function App() {
                 name="description"
                 onChange={(e) => setDescription(e.target.value)}
                 value={description}
-                className="mt-1 block w-full p-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                className="block w-full p-2 mt-1 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
               ></textarea>
             </div>
             <button
               type="submit"
-              className="w-full py-2 px-4 bg-indigo-600 text-white font-semibold rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="w-full px-4 py-2 font-semibold text-white bg-indigo-600 rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               Add Task
             </button>
           </form>
         </div>
-        <div className="w-full md:w-2/3 p-4">
-          <h2 className="text-xl font-bold mb-4">Task List</h2>
+        <div className="w-full p-4 md:w-2/3">
+          <h2 className="mb-4 text-xl font-bold">Task List</h2>
           <ul className="space-y-4">
             {tasks.map((task: any) => (
               <Task
