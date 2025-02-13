@@ -14,6 +14,11 @@ export default function App() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
 
+  useEffect(() => {
+    const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
+    console.log("API Base URL:", apiBaseUrl);
+  }, []);
+
   function fetchTasks() {
     axios
       .get("http://localhost:8000/api/tasks")
